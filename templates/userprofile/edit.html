@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <br>
+            {% if profile.avatar %}
+            <img src="{{ profile.avatar.url }}" class="img-responsive img-circle center-block">
+            {% endif %}
+            <div>
+                <h3 class="text-center">{{ user.username }}</h3>
+            </div>
+            <br>
+            <form method="post" action="." enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="avatar">
+                        上传头像
+                    </label>
+                    <input type="file" name="avatar" class="">
+                </div>
+                <div class="form-group">
+                    <label for="phonenum">
+                        电话
+                    </label>
+                    <input type="text" name="phonenum" class="form-control" value="{{ profile.phonenum }}" placeholder="phonenum">
+                </div>
+                <div class="form-group">
+                    <label for="bio">个人简介</label>
+                    <textarea type="text" class="form-control" rows="5" name="bio">
+                        {{ profile.bio }}
+                    </textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-default">确认修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

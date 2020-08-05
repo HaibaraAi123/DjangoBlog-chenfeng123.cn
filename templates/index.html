@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-xs-3">
+			<!-- 个人信息 -->
+			<div class="caption" style="padding: 20px 20px 10px 20px;">
+				<div class="" style="align-items: center;display:flex;">
+					<img class="center-block" style="padding: 0 0 0 0;height: 70px;width: 70px;border-radius: 50%;" src="/media/avatar/20200326/thread_40561563_20190716110810_s_9131_o_w_200_h_200_91515.jpg">
+				</div>
+				<h3 class="text-center" style="margin-top: 10px;">陈风</h3>
+				<p  class="text-center" style="margin-top:10px; margin-bottom:10px;font-size: 30px;">
+					<a href="#" class="caption-link hvr-float-shadow" target="_blank">
+						<img src="{% static 'myblog/images/rss_logo.svg' %}">
+					</a>
+					<a href="mailto:1224574671@qq.com" class="caption-link hvr-float-shadow" target="_blank">
+						<img src="{% static 'myblog/images/email_logo.svg' %}">
+					</a>
+					<a href="https://github.com/HaibaraAi123/" class="caption-link hvr-float-shadow" target="_blank">
+						<img src="{% static 'myblog/images/github_logo.svg' %}">
+					</a>
+					<a href="https://weibo.com/u/5519627427/" class="caption-link hvr-float-shadow" target="_blank">
+						<img src="{% static 'myblog/images/weibo_logo.svg' %}">
+					</a>
+					
+				</p>
+			</div>
+			<!-- 最近评论 -->
+			<div class="caption" style="padding-bottom: 10px;">
+				<p class="caption-title">
+					<i class="far fa-comment-dots"></i>
+					最新评论
+				</p>
+				{% for comment in comments %}
+				<div class="caption-body-small">
+					<div class="container-fluid" style="padding:0;">
+						<div class="row" style="margin:0;">
+							<div class="col-sm-2" style="padding:0;">
+								<img class="" style="padding: 0 0 0 0;height: 30px;width: 30px;border-radius: 50%;" src="/media/{{ comment.author.profile.avatar }}">
+							</div>
+							<div class="col-sm-10" style="padding:0;">
+								{{ comment.author }}
+								于{{ comment.created_time }}
+								在「{{ comment.article}}」
+								说:{{ comment.body|safe }}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		
+		<div class="col-md-6 col-xs-6">
+			{% if search %}
+			{% if Articles %}
+			<h3><span style="color:gray;">'{{ search }}'</span>的搜索结果如下：</h3>
+			{% else %}
+			<h3><span style="color:gray;">'{{ search }}'</span>无搜索结果。</h3>
+			{% endif %}
+			{% endif %}
+			{% for article in Articles %}
+			<div class="caption" style="">
+				<h3 class="under_line">
+					<a href="{% url 'myblog:detail' article.id %}" class="caption-link hvr-forward">{{ article.title }}</a>
+				</h3>
+				<div class="info" style="margin-bottom: 20px;">
+					<span>
+						<i class="far fa-eye"></i>{{ article.views }}
+						<i class="far fa-comments"></i>
+						<i class="far fa-clock"></i>{{ article.created_time }}
+					</span>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="col-md-3 col-xs-3">
+			<!-- 最新公告 -->
+			<div class="caption">
+				<p class="caption-title">
+					<i class="far fa-sticky-note"></i>
+					公告
+				</p>
+				<div class="caption-body">
+					<h4 class="text-center" style="margin-top:10px;">人月圆 山中书事</h4>
+					<p>张可久</p>
+					<p>兴亡千古繁华梦，&emsp;诗眼倦天涯。</p>
+					<p>孔林乔木，吴宫蔓草，楚庙寒鸦。</p>
+					<p>数间茅舍，藏书万卷，投老村家。</p>
+					<p>山中何事？松花酿酒，春水煎茶。</p>
+				</div>
+			</div>
+			<!-- 友情链接 -->
+			<div class="caption">
+				<p class="caption-title">
+					<i class="fas fa-link"></i>
+					友情链接
+				</p>
+				<div class="caption-body">
+					
+				</div>
+			</div>
+			<!-- 标签云 -->
+			<!-- 最新文章 -->
+			
+			
+			
+			<!-- 最近访客 -->
+			
+			<!-- 广告 -->
+			<div class="caption">
+				<p class="caption-title">
+					<i class="fas fa-ad"></i>
+					广告
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

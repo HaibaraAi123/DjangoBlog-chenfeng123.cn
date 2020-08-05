@@ -1,0 +1,230 @@
+body {
+    font-family: 'Helvetica Neue', Arial, "Hiragino Sans GB", sans-serif;
+    /*background:#f4f5f7; 灰色*/
+    padding-top:0px;
+}
+p {
+    line-height: 24px;
+}
+/*导航栏*/
+.navbar-fixed{
+    border:1px solid #ccc;
+    background-color: ;
+}
+.navbar-brand{
+    color:black;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+}
+.navbar-brand:hover,
+.navbar-brand:focus{
+    color:black;
+    font-weight:bold;
+    text-decoration:none;
+    outline:none;
+}
+.navbar-nav >li >a{
+    color:black;
+    text-decoration:none;
+}
+.navbar-nav >li >a:hover,
+.navbar-nav >li >a:focus{
+    color:black;
+    background:white;
+    font-weight:bold;
+    text-decoration:none;
+    outline:none;
+}
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
+    background-color:white;
+}
+/**/
+.nav >li >a .fa-search:hover{
+  font-size:16px;
+}
+/*导航栏下拉菜单 hover效果*/
+.dropdown .dropdown-toggle:hover .caret{
+  transform:rotate(180deg);
+}
+
+/*主页文章列表*/
+.caption{
+  border:1px solid #ccc;
+  border-radius: 10px;
+  padding: 0 20px 0 20px;
+  margin:20px 0 20px 0;
+}
+.caption:hover, .caption:focus, .caption:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.caption-link{
+  outline:none;
+  color:#333;
+  text-decoration:none;
+}
+.caption-link:hover, .caption-link:focus{
+  outline:none;
+  color:#333;
+  text-decoration:none;
+}
+.caption-title{
+  margin-top:10px;
+  font-size:18px;
+}
+.caption-body-small{
+   border-bottom:1px solid #ccc;
+   font-size:12px;
+}
+.caption-body{
+  margin-bottom:10px;
+}
+.caption-body >p{
+  margin: 0;
+  text-align:center;
+}
+.info {
+    color: #999;
+}
+/*博客侧边目录 markdown*/
+/* change from docs.css bootstrap3.0 */
+.sidebar .affix {
+  position: static;
+}
+/* First level of nav */
+/* #toc sidebar */
+#toc >ul{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  /*background-color: #f7f5fa;*/
+  border-radius: 5px;
+
+}
+/* All levels of nav */
+.sidebar >ul > li > a {
+  display: block;
+  color: #767676;
+  padding: 4px 20px;
+}
+.nav >li >a:hover,
+.nav >li >a:focus{
+  outline:none;
+  background-color:transparent;
+}
+.sidebar >ul >li >a:hover{
+  text-decoration: none;
+  color: black;
+  border-left: 1px solid black;
+  background-color: transparent;
+  outline:none;
+  padding-left:19px;
+}
+.sidebar >ul .active >a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-left: 2px solid black;
+  background-color: transparent;
+  outline:none;
+  padding-left:18px;
+}
+
+.sidebar .nav > .active >a:focus,
+.sidebar .nav > .active >nav .active >a:focus{
+  outline:none;
+}
+/* Nav: second level (shown on .active) */
+.sidebar .nav .nav {
+  display: none;
+  margin-bottom: 8px;
+}
+.sidebar .nav > .active > ul {
+  display: block;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+  color:#767676;
+}
+.sidebar .nav .nav >li >a:hover{
+  color:black;
+  padding-left:29px;
+  background-color:transparent;
+  border-left: 1px solid black;
+}
+.sidebar >ul .active >ul .active a,
+.sidebar >ul .active >ul .active a:focus{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-left: 2px solid black;
+  background-color: transparent;
+  outline:none;
+  padding-left:28px;
+}
+
+
+
+/*bs-docs-container*/
+.article-container{
+  padding-top:15px;
+}
+.article-item{
+  border: 1px solid #ccc;
+  border-radius:10px;
+  padding:15px;
+  margin-top:15px;
+  
+}
+
+/*博客下方评论模块*/
+.article-comment .container-fulid .row{
+  border-bottom : 1px solid #ccc;
+  border-radius: 0%;
+}
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  /*  使footer 到底部
+  bottom: 0; left: 0;
+  position: absolute;*/
+}
+.footer >div >div >div>p{
+  margin-bottom:0px;
+}
+
+/*关于页面*/
+.bg-header{
+  height: 400px;
+  background-size: 100% 100%;
+}
+/*照片墙页面*/
+.album-photo{
+  
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0 0 0 0;
+  margin-top:10px;
+}
+.album-photo >a{
+  outline:none;
+}
+.album-photo>a>img{
+  border-radius: 10px 10px 0 0;
+}
+.album-photo>h3{
+  margin:20px 20px 20px 20px;
+
+  color:#6c757d;
+}

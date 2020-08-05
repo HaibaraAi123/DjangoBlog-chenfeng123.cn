@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for album in albums %}
+        <div class="col-md-4" style="padding-top:20px; ">
+            
+            {% for photo in album %}
+            <!-- trigger for modal -->
+            <div class="col-sm-12 album-photo hvr-float-shadow">
+                <a href="" data-target="#modal_photo" data-toggle="modal" data-src="https://img.chenfeng123.cn/myblog/album/{{ photo.photo_url }}" data-describle="{{ photo.photo_describle }}">
+                    <img src="https://img.chenfeng123.cn/myblog/album/{{ photo.photo_url }}" style="width: 100%;">
+                </a>
+                <!--<h3>{{ photo.photo_title }}</h3>-->
+            </div>
+            
+
+            {% endfor %}
+            
+        </div>
+        {% endfor %}
+        <!-- modal -->
+            <div class="modal fade" id="modal_photo" tabindex="-1" role="dialog" aria-labelledby="">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        
+                        <div class="modal-body" >
+                            <img src="" style="width: 100%;">
+                            
+                        </div>
+                        <div class="modal-body" style="font-size: 20px; color:#6c757d;">
+                            <p>文本未添加</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock content %}
+{% block script %}
+
+<script type="text/javascript">
+    
+    
+    
+</script>
+{% endblock %}
